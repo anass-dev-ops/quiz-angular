@@ -7,6 +7,10 @@ import { CategoriesListComponent } from './components/categories-list/categories
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { CategoryAddComponent } from './components/category-add/category-add.component';
+import { QuizzesListComponent } from './components/quizzes-list/quizzes-list.component';
+import { QuizAddComponent } from './components/quiz-add/quiz-add.component';
 
 
 @NgModule({
@@ -14,7 +18,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     PrivateComponent,
     CategoriesListComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    DashboardComponent,
+    CategoryAddComponent,
+    QuizzesListComponent,
+    QuizAddComponent
   ],
   imports: [
     CommonModule,
