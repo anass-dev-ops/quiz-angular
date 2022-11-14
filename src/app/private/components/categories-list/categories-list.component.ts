@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { faEdit, faTrashAlt, faPlay } from '@fortawesome/free-solid-svg-icons';
+import { faSquare, faWindowMinimize } from '@fortawesome/free-regular-svg-icons';
+import { CategoryService } from '../../services/category.service';
 
 @Component({
   selector: 'app-categories-list',
@@ -7,9 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriesListComponent implements OnInit {
 
-  constructor() { }
+  faEdit = faEdit;
+  faTrashAlt = faTrashAlt;
+  faSquare = faSquare;
+  faWindowMinimize = faWindowMinimize;
+  faPlay = faPlay;
+
+  categories: any;
+
+  constructor(private categoryService: CategoryService) { }
 
   ngOnInit(): void {
+    this.onGetCategories();
+  }
+
+  onGetCategories() {
+    this.categoryService.getCategories().subscribe(data => {
+      this.categories = data;
+      console.log(data);
+    });
   }
 
 }

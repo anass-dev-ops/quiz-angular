@@ -1,0 +1,8 @@
+
+.sb-btn{
+  @apply px-5 py-3 rounded bg-white text-sm my-3 cursor-pointer;
+}
+
+.sb-btn-active{
+  @apply bg-blue-700 text-white;
+}

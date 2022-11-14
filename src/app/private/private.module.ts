@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClient, HttpClientModule } from '@angular/common/http'
 
 import { PrivateRoutingModule } from './private-routing.module';
 import { PrivateComponent } from './private.component';
@@ -11,6 +12,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CategoryAddComponent } from './components/category-add/category-add.component';
 import { QuizzesListComponent } from './components/quizzes-list/quizzes-list.component';
 import { QuizAddComponent } from './components/quiz-add/quiz-add.component';
+import { CategoryService } from './services/category.service';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { QuizAddComponent } from './components/quiz-add/quiz-add.component';
   imports: [
     CommonModule,
     PrivateRoutingModule,
-    FontAwesomeModule
-  ]
+    FontAwesomeModule,
+    HttpClientModule
+  ],
+  providers: [HttpClient, CategoryService],
 })
 export class PrivateModule { }

@@ -1,13 +1,28 @@
 <div class="brand px-8 py-3 bg-white shadow-sm min-h-full">
-  <h2 class="text-center font-bold text-lg">Quiz</h2>
+  <h2 class="text-center font-bold text-2xl">
+    <fa-icon [icon]="faSnowflake" class="text-pink-600"></fa-icon> Quiz
+  </h2>
   <ul>
-    <li routerLink="dashboard" routerLinkActive="bg-blue-700 text-white" class="px-5 py-3 rounded bg-white text-sm my-3 cursor-pointer">Dashboard</li>
+
+    <li routerLink="dashboard" routerLinkActive="sb-btn-active" class="sb-btn">
+      <fa-icon [icon]="faChartLine" class="mr-2"></fa-icon> Dashboard
+    </li>
     <h3 class="font-bold text-lg">Categories</h3>
-    <li routerLink="categories" routerLinkActive="bg-blue-700 text-white" class="px-5 py-3 rounded  text-sm my-3 cursor-pointer">Categories List</li>
-    <li routerLink="category-add" routerLinkActive="bg-blue-700 text-white" class="px-5 py-3 rounded bg-white text-sm my-3">Add Category</li>
+    <li routerLink="categories" routerLinkActive="sb-btn-active" class="sb-btn">
+      <fa-icon [icon]="faListUl" class="mr-2"></fa-icon> Categories List
+    </li>
+    <li routerLink="category-add" routerLinkActive="sb-btn-active" class="sb-btn">
+      <fa-icon [icon]="faPlusSquare" class="mr-2"></fa-icon> Add Category
+    </li>
     <h3 class="font-bold text-lg">Quiz</h3>
-    <li routerLink="quizzes-list" routerLinkActive="bg-blue-700 text-white" class="px-5 py-3 rounded bg-white text-sm my-3 cursor-pointer">All Quizzes</li>
-    <li routerLink="quiz-add" routerLinkActive="bg-blue-700 text-white" class="px-5 py-3 rounded bg-white text-sm my-3 cursor-pointer">Add Quiz</li>
-    <li class="px-5 py-3 rounded bg-white text-sm my-3">Logout</li>
+    <li routerLink="quizzes-list" routerLinkActive="sb-btn-active" class="sb-btn">
+      <fa-icon [icon]="faListUl" class="mr-2"></fa-icon> All Quizzes
+    </li>
+    <li routerLink="quiz-add" routerLinkActive="sb-btn-active" class="sb-btn">
+      <fa-icon [icon]="faPlusSquare" class="mr-2"></fa-icon> Add Quiz
+    </li>
+    <li class="px-5 py-3 rounded bg-white text-sm my-3">
+      <fa-icon [icon]="faSignOutAlt" class="mr-2"></fa-icon> Logout
+    </li>
   </ul>
 </div>
