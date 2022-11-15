@@ -13,6 +13,7 @@ import { CategoryAddComponent } from './components/category-add/category-add.com
 import { QuizzesListComponent } from './components/quizzes-list/quizzes-list.component';
 import { QuizAddComponent } from './components/quiz-add/quiz-add.component';
 import { CategoryService } from './services/category.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { CategoryService } from './services/category.service';
     CommonModule,
     PrivateRoutingModule,
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [HttpClient, CategoryService],
 })

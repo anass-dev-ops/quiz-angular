@@ -25,10 +25,19 @@ export class CategoriesListComponent implements OnInit {
   }
 
   onGetCategories() {
-    this.categoryService.getCategories().subscribe(data => {
-      this.categories = data;
-      console.log(data);
+    this.categoryService.getCategories().subscribe({
+      next: (data) => { this.categories = data },
+      error: (err) => { this.categories = null; console.log(err) }
     });
+  }
+
+  onDeleteCategory(id: number) {
+    if(confirm("are you sur ?")) {
+      this.categoryService.deleteCategory(id).subscribe({
+        next: (data) => { this.onGetCategories(); console.log(data); },
+        error: (err) => { console.log('ERRRROORR', err) }
+      });
+    }
   }
 
 }
