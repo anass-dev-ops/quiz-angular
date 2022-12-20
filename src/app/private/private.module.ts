@@ -14,6 +14,8 @@ import { QuizzesListComponent } from './components/quizzes-list/quizzes-list.com
 import { QuizAddComponent } from './components/quiz-add/quiz-add.component';
 import { CategoryService } from './services/category.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CategoryEditComponent } from './components/category-edit/category-edit.component';
+import { QuizService } from './services/quiz.service';
 
 
 @NgModule({
@@ -25,7 +27,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     DashboardComponent,
     CategoryAddComponent,
     QuizzesListComponent,
-    QuizAddComponent
+    QuizAddComponent,
+    CategoryEditComponent
   ],
   imports: [
     CommonModule,
@@ -34,6 +37,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [HttpClient, CategoryService],
+  providers: [HttpClient, CategoryService, QuizService],
 })
 export class PrivateModule { }

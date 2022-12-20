@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Category } from '../models/category';
+import { Category } from '../models/category.model';
 
 @Injectable({
   providedIn: 'root'
@@ -22,5 +22,13 @@ export class CategoryService {
 
   public deleteCategory(id: number): Observable<any> {
     return this.http.delete(`${this.url}/${id}`);
+  }
+
+  public getCategoryById(id: number) {
+    return this.http.get(`${this.url}/${id}`);
+  }
+
+  public editCategory(category: Category) {
+    return this.http.put(`${this.url}`, category);
   }
 }

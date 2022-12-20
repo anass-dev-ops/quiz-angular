@@ -33,4 +33,11 @@ export class CategoryAddComponent implements OnInit {
     });
   }
 
+  onClear() {
+    this.categoryForm = this.fb.group({
+      name: [''],
+      description: ['']
+    });
+  }
+
 }

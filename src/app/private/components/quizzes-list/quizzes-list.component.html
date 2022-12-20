@@ -1,14 +1,14 @@
 <div class="quizzes-list">
   <h3 class="text-xl px-5">All Quizzes</h3>
-  <div class=" bg-white p-3 m-5">
+  <div *ngFor="let q of quizzes" class=" bg-white p-3 m-5">
     <div class="flex">
-      <div class="bg-pink-600 text-white px-5 py-3 rounded">1</div>
+      <div class="bg-pink-600 text-white px-5 py-3 rounded">{{q.id}}</div>
       <div class="mx-3">
-        <h3 class="font-bold">Java Basics</h3>
-        <p class="text-xs text-gray-600">Programming</p>
+        <h3 class="font-bold">{{q.title}}</h3>
+        <p class="text-xs text-gray-600">{{q.category?.name}}</p>
       </div>
     </div>
-    <p class="my-3 text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, fugiat? Quis quaerat exercitationem cupiditate fugiat aspernatur voluptatum, natus ducimus porro eaque ipsam. Velit itaque, dolor animi enim hic quam qui!</p>
+    <p class="my-3 text-gray-700">{{q.details}}</p>
     <div class="d">
       <button class="rounded px-2 py-1 border-2 border-pink-600 text-pink-600 mr-2">view all questions</button>
       <button class="rounded px-2 py-1 border-2 border-pink-600 text-pink-600 mr-2">max marks 100</button>
