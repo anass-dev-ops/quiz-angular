@@ -16,6 +16,10 @@ import { CategoryService } from './services/category.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CategoryEditComponent } from './components/category-edit/category-edit.component';
 import { QuizService } from './services/quiz.service';
+import { QuestionsListComponent } from './components/questions-list/questions-list.component';
+import { QuestionAddComponent } from './components/question-add/question-add.component';
+import { QuestionService } from './services/question.service';
+import { QuestionEditComponent } from './components/question-edit/question-edit.component';
 
 
 @NgModule({
@@ -28,7 +32,10 @@ import { QuizService } from './services/quiz.service';
     CategoryAddComponent,
     QuizzesListComponent,
     QuizAddComponent,
-    CategoryEditComponent
+    CategoryEditComponent,
+    QuestionsListComponent,
+    QuestionAddComponent,
+    QuestionEditComponent
   ],
   imports: [
     CommonModule,
@@ -37,6 +44,6 @@ import { QuizService } from './services/quiz.service';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [HttpClient, CategoryService, QuizService],
+  providers: [HttpClient, CategoryService, QuizService, QuestionService],
 })
 export class PrivateModule { }

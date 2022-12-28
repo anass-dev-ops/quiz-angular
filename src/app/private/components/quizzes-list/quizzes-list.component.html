@@ -10,8 +10,12 @@
     </div>
     <p class="my-3 text-gray-700">{{q.details}}</p>
     <div class="d">
-      <button class="rounded px-2 py-1 border-2 border-pink-600 text-pink-600 mr-2">view all questions</button>
-      <button class="rounded px-2 py-1 border-2 border-pink-600 text-pink-600 mr-2">max marks 100</button>
+      <button
+        routerLink="/private/questions-list/{{q.id}}"
+        class="rounded px-2 py-1 border-2 border-pink-600 text-pink-600 mr-2 hover:bg-pink-600 hover:text-white">
+          view all questions
+      </button>
+      <button class="rounded px-2 py-1 border-2 border-pink-600 text-pink-600 mr-2 hover:bg-pink-600 hover:text-white">max marks 100</button>
     </div>
   </div>
 </div>
