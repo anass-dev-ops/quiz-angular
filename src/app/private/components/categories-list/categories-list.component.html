@@ -15,13 +15,15 @@
     </div>
   </div>
   <div *ngFor="let c of categories">
-    <div [routerLink]="['/private/category-edit/', c.id]" class="category flex justify-start items-center bg-white p-3 mt-2 mb-2 hover:bg-blue-100 cursor-pointer">
-      <div class="bg-blue-200 text-blue-700 px-5 py-3 rounded mr-4">{{c.id}}</div>
-      <div class="ml-3">
-        <div class="">{{c.name}}</div>
-        <div class="text-xs text-gray-600">last update 12/12/2022</div>
+    <div class="category flex items-center bg-white p-3 mt-2 mb-2 hover:bg-blue-100 cursor-pointer">
+      <div class="flex flex-grow items-center" [routerLink]="['/private/category-edit/', c.id]">
+        <div class="bg-blue-200 text-blue-700 px-5 py-3 rounded mr-4">{{c.id}}</div>
+        <div class="ml-3">
+          <div class="">{{c.name}}</div>
+          <div class="text-xs text-gray-600">last update 12/12/2022</div>
+        </div>
       </div>
-      <div class="text-right flex-grow">
+      <div class="text-right">
         <fa-icon [icon]="faEdit" class="mx-2 hover:text-blue-700" [routerLink]="['/private/category-edit/', c.id]"></fa-icon>
         <fa-icon [icon]="faTrashAlt" class="mx-2 hover:text-blue-700"  (click)="onDeleteCategory(c.id)"></fa-icon>
       </div>

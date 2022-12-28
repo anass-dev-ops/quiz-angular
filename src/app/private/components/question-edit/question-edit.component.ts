@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Question } from '../../models/question.model';
 import { QuestionService } from '../../services/question.service';
+import { Location } from '@angular/common'
 
 @Component({
   selector: 'app-question-edit',
@@ -12,7 +13,7 @@ import { QuestionService } from '../../services/question.service';
 export class QuestionEditComponent implements OnInit {
 
   question: Question = {};
-  questionId = 1;
+  questionId: number;
   questionForm = this.formBuilder.group({
     description: [""],
     option1: [""],
@@ -25,11 +26,14 @@ export class QuestionEditComponent implements OnInit {
   constructor(
     private questionService:QuestionService,
     private activatedRoute: ActivatedRoute,
-    private formBuilder: FormBuilder
-    ) { }
+    private formBuilder: FormBuilder,
+    private location: Location
+    ) {
+      this.questionId = this.activatedRoute.snapshot.params['id'];
+    }
 
   ngOnInit(): void {
-    this.questionId = this.activatedRoute.snapshot.params['id'];
+
     this.onGetQuestion(this.questionId);
   }
 
@@ -57,7 +61,7 @@ export class QuestionEditComponent implements OnInit {
   onSubmit(questionForm: FormGroup) {
     questionForm.value.id = this.questionId;
     this.questionService.updateQuestion(questionForm.value).subscribe({
-      next: (value) => { console.log(value); }
+      next: (value) => { console.log(value); this.location.back();}
     });
   }
 

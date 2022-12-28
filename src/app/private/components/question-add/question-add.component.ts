@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { QuestionService } from '../../services/question.service';
 
 @Component({
@@ -25,7 +25,8 @@ export class QuestionAddComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private activatedRoute: ActivatedRoute,
-    private questionService: QuestionService
+    private questionService: QuestionService,
+    private router: Router
     ) {
       this.quizId = activatedRoute.snapshot.params['quizId'];
     }
@@ -38,7 +39,7 @@ export class QuestionAddComponent implements OnInit {
     questionForm.value.quizId = this.quizId;
     console.log(questionForm.value);
     this.questionService.addQuestion(questionForm.value).subscribe({
-      next: (val) => { console.log(val); }
+      next: (val) => { console.log(val); this.router.navigateByUrl(`/private/questions-list/${this.quizId}`); }
     });
   }
 
