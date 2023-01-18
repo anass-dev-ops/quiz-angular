@@ -1,0 +1,25 @@
+<div class="quizzes">
+  <header>
+    <app-navbar></app-navbar>
+  </header>
+  <div class="sub-bar text-center py-16 bg-[#7ac4dc]">
+    <h2 class="text-2xl font-semibold">Quiz</h2>
+    <p class="text-gray-700 font-light ">Programming</p>
+  </div>
+  <div class="body-qui px-20 py-5">
+    <p>comment: ajouter by category</p>
+    <ng-container *ngFor="let q of quizzes">
+      <div routerLink="/public/quiz/{{q.id}}" class="box-quiz rounded p-3 bg-gray-100 flex gap-4 cursor-pointer">
+        <div class="box-id bg-purple-600 text-white py-4 w-12 text-center rounded">{{q.id}}</div>
+        <div class="foo">
+          <h4>{{q.title}}</h4>
+          <p class="text-gray-700 font-light">{{q.details}}</p>
+        </div>
+      </div>
+    </ng-container>
+
+
+
+
+  </div>
+</div>

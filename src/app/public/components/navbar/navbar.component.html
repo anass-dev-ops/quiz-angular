@@ -1,0 +1,24 @@
+<nav class="bg-[#7ac4dc] py-3 text-[#002d3b] flex items-center justify-between px-5">
+  <div class="left-side flex items-center gap-20">
+    <h3 routerLink="/" class="text-xl font-bold cursor-pointer"><fa-icon [icon]="faSnowflake"></fa-icon> Quiz</h3>
+    <ul class="flex items-center gap-4 font-semibold">
+      <li>
+        <a class="hover:text-[#0d4c5f]" href="">Categories</a>
+      </li>
+      <li>
+        <a class="hover:text-[#0d4c5f]" href="">Services</a>
+      </li>
+      <li>
+        <a class="hover:text-[#0d4c5f]" href="">About</a>
+      </li>
+      <li>
+        <a class="hover:text-[#0d4c5f]" routerLink="/private/dashboard" >Dashboard</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="left-buttons">
+    <button class="mr-2 font-bold rounded border border-[#002d3b] py-1 px-4">Sign in</button>
+    <button class="bg-[#002d3b] text-white hover:bg-[#0d4c5f] py-1 px-4 rounded border border-[#002d3b]">Sign up</button>
+  </div>
+</nav>

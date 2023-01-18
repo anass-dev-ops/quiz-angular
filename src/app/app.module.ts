@@ -4,8 +4,9 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CategoryService } from './private/services/category.service';
+import { QuizService } from './private/services/quiz.service';
 
 @NgModule({
   declarations: [
@@ -15,9 +16,10 @@ import { CategoryService } from './private/services/category.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule
   ],
-  providers: [HttpClient, CategoryService],
+  providers: [HttpClient, CategoryService, QuizService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
