@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { QuestionService } from 'src/app/private/services/question.service';
 
 @Component({
@@ -15,10 +16,12 @@ export class QuizComponent implements OnInit {
   seconds: number = 60;
   score: number = 0;
   showScore: boolean = false;
+  quizId: number;
 
   constructor(
     private questionService: QuestionService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private activatedRoute: ActivatedRoute
     ) {
       this.reqQuestions = this.fb.group({
         responseQ1: "",
@@ -32,6 +35,7 @@ export class QuizComponent implements OnInit {
         responseQ9: "",
         responseQ10: "",
       });
+      this.quizId = this.activatedRoute.snapshot.params['id'];
     }
 
   ngOnInit(): void {
@@ -44,7 +48,7 @@ export class QuizComponent implements OnInit {
   }
 
   onGetQuestions() {
-    this.questionService.getQuestions(1).subscribe({
+    this.questionService.getQuestions(this.quizId).subscribe({
       next: val => {
         this.questions = val;
 

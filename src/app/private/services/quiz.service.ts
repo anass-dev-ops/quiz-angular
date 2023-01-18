@@ -15,6 +15,10 @@ export class QuizService {
     return this.http.get(this.url);
   }
 
+  public getQuizzesByCategoryId(id: number) {
+    return this.http.get(`${this.url}/${id}`);
+  }
+
   public addQuiz(quiz: Quiz) {
     return this.http.post(this.url, quiz);
   }
