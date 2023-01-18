@@ -75,7 +75,7 @@ export class QuizComponent implements OnInit {
         this.doEvaluate();
       }
 
-    }, 100);
+    }, 1000);
   }
 
   doEvaluate() {
